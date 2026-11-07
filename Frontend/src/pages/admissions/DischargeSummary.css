@@ -1,0 +1,168 @@
+.discharge-summary {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 40px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  color: #1e293b;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.discharge-summary .hospital-header {
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #2563eb;
+  margin-bottom: 25px;
+}
+
+.discharge-summary .hospital-header h1 {
+  color: #1d4ed8;
+  font-size: 25px;
+  margin: 0 0 5px;
+}
+
+.discharge-summary .hospital-header p {
+  color: #64748b;
+  margin: 0;
+  font-size: 13px;
+}
+
+.discharge-summary .report-title {
+  text-align: center;
+  font-size: 21px;
+  font-weight: 700;
+  margin: 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.discharge-summary .summary-section {
+  margin: 22px 0;
+  padding: 18px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.discharge-summary .summary-section h3 {
+  color: #1d4ed8;
+  font-size: 16px;
+  margin: 0 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.discharge-summary .patient-info {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 25px;
+}
+
+.discharge-summary .info-item {
+  font-size: 14px;
+}
+
+.discharge-summary .info-item strong {
+  color: #334155;
+}
+
+.discharge-summary .summary-text {
+  margin: 0;
+  font-size: 14px;
+  color: #475569;
+  white-space: pre-wrap;
+}
+
+.discharge-summary .condition {
+  display: inline-block;
+  padding: 3px 12px;
+  background: #dcfce7;
+  color: #15803d;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.discharge-summary .doc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.discharge-summary .doc-table th,
+.discharge-summary .doc-table td {
+  padding: 8px 10px;
+  border: 1px solid #e2e8f0;
+  text-align: left;
+}
+
+.discharge-summary .doc-table th {
+  background: #f8fafc;
+}
+
+.discharge-summary .summary-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 45px;
+  padding-top: 20px;
+  border-top: 1px solid #cbd5e1;
+}
+
+.discharge-summary .signature {
+  width: 220px;
+  padding-top: 35px;
+  border-bottom: 1px solid #64748b;
+  text-align: center;
+  font-size: 13px;
+}
+
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+
+  .discharge-summary,
+  .discharge-summary * {
+    visibility: visible !important;
+  }
+
+  .discharge-summary {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 15px;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .discharge-summary .summary-section {
+    break-inside: avoid;
+  }
+
+  @page {
+    size: A4;
+    margin: 15mm;
+  }
+}
+
+@media (max-width: 600px) {
+  .discharge-summary {
+    margin: 10px;
+    padding: 18px;
+  }
+
+  .discharge-summary .patient-info {
+    grid-template-columns: 1fr;
+  }
+
+  .discharge-summary .summary-footer {
+    justify-content: flex-start;
+  }
+}

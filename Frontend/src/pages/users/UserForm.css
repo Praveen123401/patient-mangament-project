@@ -1,0 +1,81 @@
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.user-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.user-form-field label {
+  color: #334155;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.user-form-field input,
+.user-form-field select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 13px;
+  border: 1px solid #dce3ed;
+  border-radius: 8px;
+  outline: none;
+  background: white;
+  font-size: 13px;
+  color: #334155;
+}
+
+.user-form-field input:focus,
+.user-form-field select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.user-form-field small {
+  color: #dc2626;
+  font-size: 12px;
+}
+
+.user-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.user-form-actions button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.user-cancel-btn {
+  background: white;
+  border: 1px solid #dce3ed;
+  color: #475569;
+}
+
+.user-save-btn {
+  background: #2563eb;
+  border: 1px solid #2563eb;
+  color: white;
+}
+
+@media (max-width: 450px) {
+  .user-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .user-form-actions button {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,124 @@
+:root {
+  --inv-primary: #1e3a8a;
+  --inv-primary-dark: #172554;
+  --inv-accent: #2563eb;
+  --inv-soft: #eff4ff;
+  --inv-border: #dbe2ef;
+  --inv-text: #1e293b;
+  --inv-muted: #64748b;
+}
+
+.invoice-wrap { padding: 28px 16px; background: #e9eef6; min-height: 100vh; }
+
+/* Print button */
+.invoice-toolbar { max-width: 794px; margin: 0 auto 14px; text-align: right; }
+.invoice-toolbar button {
+  background: var(--inv-primary); color: #fff; border: 0; padding: 10px 22px;
+  border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer;
+  box-shadow: 0 3px 10px rgba(30, 58, 138, .3); transition: all .2s;
+}
+.invoice-toolbar button:hover { background: var(--inv-primary-dark); transform: translateY(-1px); }
+
+/* Page */
+.invoice {
+  width: 794px; max-width: 100%; margin: 0 auto; box-sizing: border-box;
+  background: #fff; color: var(--inv-text); padding: 0 0 40px;
+  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 12px; line-height: 1.55; border-radius: 6px; overflow: hidden;
+  box-shadow: 0 8px 28px rgba(15, 23, 42, .12);
+}
+.invoice p { margin: 0 0 2px; }
+
+/* Header */
+.inv-header {
+  display: flex; align-items: center; gap: 18px; padding: 24px 40px;
+  background: var(--inv-soft); border-bottom: 4px solid var(--inv-primary);
+}
+.inv-logo {
+  width: 62px; height: 62px; flex-shrink: 0; display: grid; place-items: center;
+  font-size: 32px; color: #fff; background: var(--inv-primary); border-radius: 14px;
+}
+.inv-header h1 { margin: 0 0 4px; font-size: 24px; font-weight: 800; color: var(--inv-primary); letter-spacing: -.3px; }
+.inv-header p { font-size: 11.5px; color: var(--inv-muted); font-weight: 500; }
+
+/* Patient + admission info */
+.inv-info {
+  display: grid; grid-template-columns: 1.3fr 1fr; gap: 0;
+  margin: 22px 40px 0; border: 1px solid var(--inv-border); border-radius: 10px; overflow: hidden;
+}
+.inv-info > div { padding: 16px 18px; }
+.inv-info > div:first-child { border-right: 1px solid var(--inv-border); }
+.inv-info b { color: var(--inv-muted); font-weight: 600; font-size: 11px; margin-right: 4px; }
+.inv-info p { color: #0f172a; font-weight: 500; }
+.inv-info .gap { margin-top: 12px; }
+.inv-info .indent { padding-left: 14px; }
+
+/* Section titles */
+.inv-title {
+  display: flex; align-items: center; gap: 12px;
+  margin: 28px 40px 10px; font-size: 12px; font-weight: 800;
+  letter-spacing: 1.6px; color: var(--inv-primary); text-align: left;
+}
+.inv-title::after { content: ""; flex: 1; height: 1px; background: var(--inv-border); }
+
+/* Tables */
+.inv-table { width: calc(100% - 80px); margin: 0 40px; border-collapse: collapse; }
+.inv-table th {
+  text-align: left; padding: 9px 10px; font-size: 11px; font-weight: 600;
+  letter-spacing: .4px; text-transform: uppercase;
+  background: var(--inv-primary); color: #fff; border: 0;
+}
+.inv-table th:first-child { border-radius: 8px 0 0 8px; }
+.inv-table th:last-child { border-radius: 0 8px 8px 0; }
+.inv-table td { padding: 8px 10px; vertical-align: top; border-bottom: 1px solid #eef1f6; }
+.inv-table tbody tr:nth-child(even) td { background: #fafbfd; }
+.inv-table .r { text-align: right; font-variant-numeric: tabular-nums; }
+.inv-table .c { text-align: center; }
+
+/* Totals */
+.inv-totals {
+  width: 310px; margin: 16px 40px 0 auto; padding: 10px 16px;
+  border: 1px solid var(--inv-border); border-radius: 10px; background: #fcfdff;
+}
+.inv-totals p { display: flex; justify-content: space-between; gap: 14px; padding: 5px 0; color: var(--inv-muted); }
+.inv-totals p b { color: #0f172a; font-weight: 700; font-variant-numeric: tabular-nums; }
+.inv-totals p:nth-child(4) {
+  margin: 6px -16px; padding: 10px 16px; font-size: 14px;
+  background: var(--inv-primary); color: #fff;
+}
+.inv-totals p:nth-child(4) b { color: #fff; }
+.inv-totals p:nth-child(5) { font-size: 11px; font-style: italic; border-top: 1px dashed var(--inv-border); margin-top: 4px; }
+
+/* Detailed breakup */
+.detail .group-row td {
+  padding: 18px 10px 6px; font-weight: 800; font-size: 12px; color: var(--inv-primary);
+  background: transparent !important; border-bottom: 2px solid var(--inv-soft);
+}
+.detail .subtotal td {
+  font-weight: 700; color: var(--inv-primary);
+  background: var(--inv-soft) !important; border-bottom: 0;
+}
+.detail .subtotal td:first-child { border-radius: 6px 0 0 6px; }
+.detail .subtotal td:last-child { border-radius: 0 6px 6px 0; }
+
+/* Mobile */
+@media (max-width: 700px) {
+  .inv-header, .inv-info, .inv-title, .inv-table, .inv-totals { margin-left: 16px; margin-right: 16px; }
+  .inv-header { padding: 18px 16px; margin: 0; }
+  .inv-info { grid-template-columns: 1fr; }
+  .inv-info > div:first-child { border-right: 0; border-bottom: 1px solid var(--inv-border); }
+  .inv-table { width: calc(100% - 32px); font-size: 11px; }
+}
+
+/* Print */
+@media print {
+  body * { visibility: hidden; }
+  .invoice, .invoice * { visibility: visible; }
+  .invoice {
+    position: absolute; left: 0; top: 0; width: 100%; box-shadow: none; border-radius: 0;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .no-print { display: none !important; }
+  .detail tbody { page-break-inside: avoid; }
+  @page { size: A4; margin: 8mm; }
+}

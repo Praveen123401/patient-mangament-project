@@ -1,0 +1,34 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 22px;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.nav-left { display: flex; align-items: center; gap: 10px; }
+.nav-menu-btn { display: none; }
+
+.nav-brand {
+  display: none;               /* sidebar already shows the brand on desktop */
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.nav-search { flex: 1; max-width: 420px; }
+.nav-right { display: flex; align-items: center; gap: 14px; margin-left: auto; }
+
+@media (max-width: 900px) {
+  .navbar { padding: 10px 14px; }
+  .nav-menu-btn { display: grid; }
+  .nav-brand { display: inline-flex; }
+  .nav-search { display: none; }   /* keeps the mobile bar clean */
+}

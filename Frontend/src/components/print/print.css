@@ -1,0 +1,20 @@
+.doc { background: #fff; padding: 28px; max-width: 800px; margin: 0 auto; border: 1px solid var(--border); border-radius: var(--radius); }
+.doc-head { text-align: center; border-bottom: 2px solid var(--primary); padding-bottom: 10px; margin-bottom: 16px; }
+.doc-head h2 { margin: 0; color: var(--primary); }
+.doc-head p { margin: 4px 0 0; color: var(--muted); }
+.doc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px; margin-bottom: 16px; font-size: 14px; }
+.doc-table { width: 100%; border-collapse: collapse; margin: 10px 0 16px; font-size: 14px; }
+.doc-table th, .doc-table td { border: 1px solid var(--border); padding: 7px 10px; text-align: left; }
+.doc-table th { background: var(--bg); }
+.doc-totals { margin-left: auto; width: 260px; }
+.doc-totals div { display: flex; justify-content: space-between; padding: 4px 0; }
+.doc-sign { display: flex; justify-content: space-between; margin-top: 48px; }
+.doc-sign span { border-top: 1px solid var(--text); padding-top: 4px; min-width: 160px; text-align: center; font-size: 13px; }
+
+@media print {
+  body * { visibility: hidden; }
+  .print-area, .print-area * { visibility: visible; }
+  .print-area { position: absolute; inset: 0; border: 0; max-width: none; }
+  .no-print { display: none !important; }
+  @page { margin: 14mm; }
+}
